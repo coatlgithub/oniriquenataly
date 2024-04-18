@@ -1,0 +1,75 @@
+/* index.css */
+
+body {
+    background-color: #E7D4CD; /* Soft white background */
+    color: #D43C55; /* pinkish text */
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    min-height: 105vh; /* Set minimum height to 105% of the viewport height */
+    position: relative; /* Make body a positioning context */
+}
+
+.white-box {
+    position: absolute; /* Position the box absolutely */
+    top: 1%; /* Set the top position to 1% from the top of the page */
+    bottom: 3%; /* Set the bottom position to 3% from the bottom of the page */
+    left: 50%; /* Set the left position to the middle of the viewport */
+    transform: translate(-50%, 0); /* Center the box horizontally */
+    width: 49%; /* Set the width of the box to 49% of the viewport width */
+    height: 96%; /* Set the height of the box to 96% of the viewport height */
+    background-color: #ffffff; /* White background color */
+    z-index: 1; /* Ensure the white box is below other elements */
+    overflow: auto; /* Enable scrolling if necessary */
+}
+
+.text-content {
+    position: absolute; /* Position the text absolutely */
+    top: 20px; /* Set the top position to 20px */
+    left: 50%; /* Set the left position to the middle of the viewport */
+    transform: translateX(-50%); /* Center the text horizontally */
+    z-index: 2; /* Ensure the text is above the white box */
+    width: 100%; /* Make text content width 100% */
+}
+
+.additional-text {
+    position: absolute; /* Position the additional text absolutely */
+    top: 110px; /* Set the top position to 110px */
+    left: 50%; /* Set the left position to the middle of the viewport */
+    transform: translateX(-50%); /* Center the additional text horizontally */
+    z-index: 2; /* Ensure the additional text is above the white box */
+    width: 100%; /* Make additional text width 100% */
+}
+
+.image {
+    position: absolute; /* Position the image absolutely */
+    top: 250px; /* Set the top position */
+    left: 50%; /* Set the left position to the middle of the viewport */
+    transform: translateX(-50%); /* Center the image horizontally */
+    z-index: 2; /* Ensure the image is above the white box */
+}
+
+.ps-text {
+    position: absolute; /* Position the PS text absolutely */
+    bottom: 20px; /* Set the bottom position to 20px */
+    left: 50%; /* Set the left position to the middle of the viewport */
+    transform: translateX(-50%); /* Center the PS text horizontally */
+    z-index: 2; /* Ensure the PS text is above the white box */
+    width: 100%; /* Make PS text width 100% */
+}
+
+.menu {
+    position: absolute; /* Position the menu absolutely */
+    top: 10px; /* Set the top position to 10px */
+    left: 10px; /* Set the left position to 10px */
+    z-index: 2; /* Ensure the menu is above the white box */
+    text-align: left; /* Align text to the left */
+}
+
+.menu a {
+    display: block; /* Make the links block-level elements */
+    text-decoration: none; /* Remove default underline */
+    color: inherit; /* Inherit text color */
+    padding: 5px 10px; /* Add padding */
+}

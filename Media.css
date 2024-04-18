@@ -1,0 +1,60 @@
+/* media.css */
+
+body {
+    background-color: #FCE4EC; /* Cherry blossom pink */
+    color: black; /* Black text */
+    font-family: Arial, sans-serif; /* Set font family */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    text-align: center; /* Center-align text */
+}
+
+h1 {
+    margin-top: 20px; /* Add space above the title */
+    font-size: 24px; /* Larger font size for the title */
+}
+
+.image-row {
+    display: flex; /* Use flexbox to arrange images in a row */
+    justify-content: center; /* Center-align images horizontally */
+    margin-bottom: 20px; /* Add space between rows */
+}
+
+.image {
+    margin: 20px; /* Add space around each image */
+    cursor: pointer; /* Change cursor to pointer when hovering over images */
+}
+
+.image:hover {
+    opacity: 0.8; /* Reduce opacity of images on hover */
+}
+
+.image img {
+    max-width: 300px; /* Limit maximum width of images */
+    max-height: 300px; /* Limit maximum height of images */
+    border: 5px solid #FFFFFF; /* White border around images */
+    border-radius: 10px; /* Rounded corners for images */
+}
+
+.menu {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 2;
+    text-align: left;
+}
+
+.menu table {
+    border-collapse: collapse;
+}
+
+.menu td {
+    padding: 5px;
+    border: 1px solid white;
+}
+
+.menu td a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Random Box</title>
+    <link rel="stylesheet" href="Random_Box.css">
+</head>
+<body>
+    <div class="menu">
+        <table>
+            <tr>
+                <td><a href="Index.html">Home</a></td>
+            </tr>
+            <tr>
+                <td><a href="media.html">Media</a></td>
+            </tr>
+            <tr>
+                <td><a href="timer.html">Timer</a></td>
+            </tr>
+            <tr>
+                <td><a href="sotd.html">SOTD</a></td>
+            </tr>
+            <tr>
+                <td><a href="game1.html">Game 1</a></td>
+            </tr>
+            <tr>
+                <td><a href="hall_of_fame.html">Hall of Fame</a></td>
+            </tr>
+            <tr>
+                <td><a href="random_box.html">Random Box</a></td>
+            </tr>
+        </table>
+    </div>
+
+    <h1 style="margin-top: 100px;">The Random Box</h1>
+    <img src="https://i.ibb.co/zHfjp9J/slotmachine.png" alt="Slot Machine" width="100">
+    <div id="media-container">
+        <!-- Media will be displayed here -->
+    </div>
+    <p id="random-box-text">Test your luck, refresh for something new. (Could repeat)</p>
+
+    <!-- JavaScript code for fetching and displaying media -->
+    <script>
+        // Array containing the URLs of your GitHub repositories
+        const repositories = [
+            "https://api.github.com/repos/coatlgithub/coatlsmediapage/contents",
+            "https://api.github.com/repos/coatlgithub/coatlsmediapage2/contents",
+            "https://api.github.com/repos/coatlgithub/coatlsmediapage3/contents",
+            "https://api.github.com/repos/coatlgithub/coatlsmediapage4/contents"
+        ];
+
+        // Function to fetch media files from a random repository
+        async function fetchRandomMedia() {
+            // Randomly select a repository
+            const randomRepoIndex = Math.floor(Math.random() * repositories.length);
+            const randomRepoUrl = repositories[randomRepoIndex];
+
+            // Fetch the contents of the repository
+            const response = await fetch(randomRepoUrl);
+            const data = await response.json();
+
+            // Extract URLs of media files
+            const mediaFiles = data.filter(item => item.type === "file" && (
+                item.name.endsWith(".jpg") || item.name.endsWith(".jpeg") ||
+                item.name.endsWith(".png") || item.name.endsWith(".gif") ||
+                item.name.endsWith(".mp4") || item.name.endsWith(".mov")
+            ));
+
+            if (mediaFiles.length === 0) {
+                // If no media files found, try fetching again
+                fetchRandomMedia();
+                return;
+            }
+
+            // Randomly select a media file
+            const randomMediaIndex = Math.floor(Math.random() * mediaFiles.length);
+            const randomMediaUrl = mediaFiles[randomMediaIndex].download_url;
+
+            // Display the media file
+            displayMedia(randomMediaUrl);
+        }
+
+        // Function to display the media file on the webpage
+        function displayMedia(mediaUrl) {
+            const mediaContainer = document.getElementById('media-container');
+
+            // Check if media is an image or video and create corresponding HTML element
+            if (mediaUrl.endsWith(".mp4") || mediaUrl.endsWith(".mov")) {
+                const videoElement = document.createElement('video');
+                videoElement.src = mediaUrl;
+                videoElement.controls = true;
+                mediaContainer.appendChild(videoElement);
+            } else {
+                const imgElement = document.createElement('img');
+                imgElement.src = mediaUrl;
+                mediaContainer.appendChild(imgElement);
+            }
+        }
+
+        // Call the fetchRandomMedia function to fetch and display a random media file
+        fetchRandomMedia();
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+

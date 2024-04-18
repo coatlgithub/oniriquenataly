@@ -1,0 +1,42 @@
+body {
+    background-color: black; /* Set page background color to black */
+    color: white; /* Set text color to white */
+    font-family: "Old London", serif; /* Set font family to Old London */
+    font-weight: bold; /* Set font weight to bold */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    text-align: center; /* Center align text */
+}
+
+.menu {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 2;
+    text-align: left;
+}
+
+.menu-table {
+    border-collapse: collapse;
+    border: 2px solid white; /* Add white border around each table */
+    margin-bottom: 10px; /* Add some margin between tables */
+    padding: 10px; /* Add padding to tables */
+}
+
+.menu-table td {
+    padding: 5px;
+}
+
+.menu-table td a {
+    color: white;
+    text-decoration: none;
+}
+
+#media-container {
+    margin-top: 50px; /* Adjust margin for media container */
+}
+
+#random-box-text {
+    font-family: Arial, sans-serif; /* Set font family for random box text */
+    margin-top: 20px; /* Adjust margin for random box text */
+}

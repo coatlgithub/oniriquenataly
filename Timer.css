@@ -1,0 +1,66 @@
+body {
+    background-color: black; /* Set page background color to black */
+    color: white; /* Set text color to white */
+    font-family: Garamond, serif; /* Set font family to Garamond */
+    font-weight: bold; /* Set font weight to bold */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+#timer-container {
+    text-align: center;
+    margin-top: 100px;
+}
+
+#timer {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.countdown-box {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.youtube-link {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.youtube-link a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.youtube-link a:hover {
+    color: blue; /* Change text color to bright blue on hover */
+}
+
+.menu {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 2;
+    text-align: left;
+}
+
+.menu table {
+    border-collapse: collapse;
+}
+
+.menu td {
+    padding: 5px;
+    border: 1px solid white;
+}
+
+.menu td a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}

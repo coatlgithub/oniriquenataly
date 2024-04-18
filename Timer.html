@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Timer</title>
+    <link rel="stylesheet" href="Timer.css">
+</head>
+<body>
+    <div class="menu">
+        <table>
+            <tr>
+                <td><a href="Index.html">Home</a></td>
+            </tr>
+            <tr>
+                <td><a href="media.html">Media</a></td>
+            </tr>
+            <tr>
+                <td><a href="timer.html">Timer</a></td>
+            </tr>
+            <tr>
+                <td><a href="sotd.html">SOTD</a></td>
+            </tr>
+            <tr>
+                <td><a href="game1.html">Game 1</a></td>
+            </tr>
+            <tr>
+                <td><a href="hall_of_fame.html">Hall of Fame</a></td>
+            </tr>
+            <tr>
+                <td><a href="random_box.html">Random Box</a></td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="timer-container">
+        <div class="countdown-box">COUNTDOWN TO LEGAL</div>
+        <div id="timer"></div>
+    </div>
+
+    <div class="youtube-link">
+        <a href="https://www.youtube.com/watch?v=TXedVafIgsw&t=59s">i got this from impractical jokers idk why i made it so serious looking (click me)</a>
+    </div>
+
+    <script>
+        // Set the target date to February 13, 2026
+        const targetDate = new Date("February 13, 2026 00:00:00").getTime();
+
+        // Update the countdown every second
+        const timerInterval = setInterval(function() {
+            // Get the current date and time
+            const now = new Date().getTime();
+
+            // Calculate the difference between the target date and the current date
+            const difference = targetDate - now;
+
+            // Calculate days, hours, minutes, and seconds
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            // Display the countdown
+            document.getElementById("timer").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+            // If the countdown is over, display a message
+            if (difference < 0) {
+                clearInterval(timerInterval);
+                document.getElementById("timer").innerHTML = "Countdown expired!";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

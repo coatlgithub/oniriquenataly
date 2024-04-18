@@ -1,0 +1,68 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #f0f0f0;
+    position: relative; /* Position the body relative to use pseudo-element */
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://i.ibb.co/VqmQvbf/yeezus.jpg'); /* Set the album cover image */
+    background-size: cover;
+    background-position: center;
+    filter: blur(15px); /* Apply blur filter */
+    z-index: -1; /* Ensure it's behind other content */
+}
+
+#spotify-player {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative; /* Ensure it's above the pseudo-element */
+    z-index: 1; /* Ensure it's above the pseudo-element */
+    margin-top: 20px; /* Add margin to separate from the text */
+}
+
+.menu {
+    position: absolute; /* Position the menu absolutely */
+    top: 10px; /* Set the top position to 10px */
+    left: 10px; /* Set the left position to 10px */
+    z-index: 2; /* Ensure the menu is above the white box */
+    text-align: left; /* Align text to the left */
+}
+
+.menu a {
+    display: block; /* Make the links block-level elements */
+    text-decoration: none; /* Remove default underline */
+    color: black; /* Set text color */
+    padding: 5px 10px; /* Add padding */
+}
+
+#title {
+    font-size: 24px; /* Set font size */
+    margin-bottom: 5px; /* Add bottom margin */
+    margin-top: 20px; /* Add top margin */
+    color: white; /* Set text color to white */
+    background-color: black; /* Set background color to black */
+    padding: 10px; /* Add padding */
+    border-radius: 8px; /* Add border radius */
+}
+
+#subtitle {
+    font-size: 14px; /* Set font size */
+    color: #666; /* Set text color */
+    margin-bottom: 20px; /* Add bottom margin */
+    padding: 10px; /* Add padding */
+    background-color: black; /* Set background color to black */
+    border-radius: 8px; /* Add border radius */
+}

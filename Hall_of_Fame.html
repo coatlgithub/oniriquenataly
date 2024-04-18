@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hall of Fame</title>
+    <link rel="stylesheet" href="Hall_of_Fame.css"> <!-- Linking the external CSS file -->
+</head>
+<body>
+
+<div class="title">Hall of Fame</div>
+
+<table class="tables">
+    <tr>
+        <td><a href="Index.html">Home</a></td>
+    </tr>
+    <tr>
+        <td><a href="media.html">Media</a></td>
+    </tr>
+    <tr>
+        <td><a href="timer.html">Timer</a></td>
+    </tr>
+    <tr>
+        <td><a href="sotd.html">SOTD</a></td>
+    </tr>
+    <tr>
+        <td><a href="game1.html">Game 1</a></td>
+    </tr>
+    <tr>
+        <td><a href="hall_of_fame.html">Hall of Fame</a></td>
+    </tr>
+    <tr>
+        <td><a href="random_box.html">Random Box</a></td>
+    </tr>
+</table>
+
+<div class="gallery">
+    <div class="image-container">
+        <img class="image" src="https://i.ibb.co/N3h1QLW/fw.jpg" alt="Image 1">
+    </div>
+    <div class="image-container">
+        <img class="image" src="https://i.ibb.co/D7LZfhJ/rrrrrrrrrrrr.jpg" alt="Image 2">
+    </div>
+    <!-- Add more image containers here -->
+    <div class="image-container">
+        <img class="image" src="https://i.ibb.co/SDgYS5s/mewing.jpg" alt="Image 3">
+    </div>
+    <div class="image-container">
+        <img class="image" src="https://i.ibb.co/rkfQ6y8/mewhen.jpg" alt="Image 4">
+    </div>
+    <div class="image-container">
+        <img class="image" src="https://i.ibb.co/bgPFYxZ/mee2.png" alt="Image 5">
+    </div>
+    <div class="image-container">
+        <img class="image" src="https://i.ibb.co/tM9wCCZ/memememe.png" alt="Image 6">
+    </div>
+    <div class="image-container">
+        <img class="image" src="https://i.ibb.co/WPcZwz2/MEMEMEMEEM.jpg" alt="Image 7">
+    </div>
+    <div class="image-container">
+        <img class="image" src="https://i.ibb.co/449VFDc/care.jpg" alt="Image 8">
+    </div>
+    <div class="image-container">
+        <img class="image" src="https://i.ibb.co/0KzWTjP/me2.jpg" alt="Image 9">
+    </div>
+    <div class="image-container">
+        <img class="image" src="https://i.ibb.co/R3kdnDk/me.jpg" alt="Image 10">
+    </div>
+    <div class="image-container">
+        <img class="image" src="https://i.ibb.co/35xfcxV/IMG-5345.jpg" alt="Image 11">
+    </div>
+    <div class="image-container">
+        <img class="image" src="https://i.ibb.co/JHnGGjb/aadad.jpg" alt="Image 12">
+    </div>
+    <div class="image-container">
+        <img class="image" src="https://i.ibb.co/k478LH8/aaaa.jpg" alt="Image 13">
+    </div>
+</div>
+
+<script>
+    const imageContainers = document.querySelectorAll('.image-container');
+
+    imageContainers.forEach(container => {
+        container.addEventListener('click', () => {
+            const image = container.querySelector('.image');
+            const imageUrl = image.getAttribute('src');
+
+            const expandedImage = document.createElement('div');
+            expandedImage.classList.add('expanded-image');
+            expandedImage.innerHTML = `
+                <span class="close-btn">&times;</span>
+                <img src="${imageUrl}" alt="Expanded Image">
+            `;
+
+            document.body.appendChild(expandedImage);
+
+            const closeBtn = expandedImage.querySelector('.close-btn');
+            closeBtn.addEventListener('click', () => {
+                expandedImage.remove();
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
